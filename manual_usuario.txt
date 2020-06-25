@@ -1,0 +1,27 @@
+                        Manual de usuario proyecto “Catalogo”
+
+Para administrador de catálogo:
+1.	Para ingresar un libro:
+    •	Deberás colocar la información como te la pide sustituyendo a los espacios con un guion “- “. Ejemplo: “El-esclavo”
+    •	Al momento de digitar el ISBN no deben ser mas de 5 dígitos.                               Ejemplo “39875”
+2.	Para dar de baja un libro:
+    •	Debes dar de baja un libro con la información ISBN del libro que quieres eliminar, la información de cada libro se encuentra en “librosventaactualizado.txt”, para tener la información de cada libro nuevo que se haya agregado.
+3.	Para agregar existencias:
+    •	Deberás primero digitar el ISBN del libro al que quieres modificar su inventario y después digitar las existencias que tendrá en total el libro.
+
+
+Para cliente:
+1.	Para conocer la información de los libros en venta: 
+    •	Digita la opción 1
+2.	Para buscar un libro:
+    •	Tienes la opción de buscar por título, autor e ISBN, digita la opción que gustes para buscar el libro y digita la información que te pide.
+    •	Al momentos de ingresar palabras exactamente como está escrito en el catálogo, que se encuentra en archivo “librosventaactualizado.txt” deberás sustituir al espacio por el símbolo guion “-“. Ejemplo: “Abraham-Hernandez”
+    •	Recuerda que el ISBN solo tiene 5 dígitos. Ejemplo: “39875”
+3.	Para añadir al carrito de compras:
+    •	Para añadir un libro al carrito de compras deberá ingresar el ISBN del libro que desea comprar.
+    •	Si quiere eliminar un libro del carrito de comprar solo podrá eliminar el ultimo que añadió al carrito por medio del ISBN.
+4.	Para finalizar compra:
+    •	Cuando desee finalizar su compra ingrese a la opción 7 y le generara su ticket de compra.
+Gracias por preferencia
+
+

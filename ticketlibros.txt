@@ -1,0 +1,5 @@
+1	Libro	como-dibujar-anime	tadashi-ozawa	2	350.000000
+
+2	Libro	Calculo-diferencial	Manny	2	50.000000
+
+El total de la compra es:	 $800.000000

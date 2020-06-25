@@ -1,0 +1,7 @@
+Descripción del problema
+Objetivo:
+Crear un programa que me permita manejar una libreria virtual para 
+permitirle a uno o muchos usuarios adquirir libros, haciendo uso de
+memoria dinamica ya que no se tiene una cantidad definida de pedidos.
+Por ello un usuario podra adquirir los libros que necesite mientras no 
+se acabe el stock.
