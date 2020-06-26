@@ -26,5 +26,5 @@ CATALOGO *eliminar_libro_inicio(CATALOGO *c, long del);//recibe un ISBN para enc
 CATALOGO *eliminar_libro_enmedio(CATALOGO *c, long del);//por medio de un if entra a esta funcion y reacomoda los apuntadores para eliminar el libro
 CATALOGO *eliminar_libro_final(CATALOGO *c, long del);//por medio de un if entra a esta funcion, reacomoda la lista
 //doble ligada para eliminar sin perder informacion
-
+void recorrer_catalogo(CATALOGO *c);
 #endif
