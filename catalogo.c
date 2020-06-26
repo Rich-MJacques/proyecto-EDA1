@@ -2,6 +2,9 @@
 #include "catalogo.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
+#define flecha_der 77
+#define flecha_izq 75
 
 CATALOGO *crear_catalogo(){
     CATALOGO *c = (CATALOGO*)malloc (sizeof(CATALOGO));
@@ -9,28 +12,6 @@ CATALOGO *crear_catalogo(){
     c->tail = NULL;
     c->tam = 0;
     return c;
-}
-
-void add_libro_init(CATALOGO *c, LIBRO *l){
-    if(c != NULL){
-        if(c->head == NULL){
-            c->head = crear_libro();
-            c->head->INFO = l->INFO;
-            c->head-> prev = c->head;
-            c->head->next= c->head;
-            return ;
-        }
-        LIBRO *nuevo = crear_libro();
-        nuevo->INFO = l->INFO;
-        nuevo->next = c->head;
-        c->head->prev = nuevo;
-        c->head = nuevo;
-        c->head-> prev = c->head ;
-        c->head->next= c->head;
-        c->head->prev = c->tail;
-        c->tail->next = c->head;
-        c->tam++;
-    }
 }
 
 void imprimir_catalogo(CATALOGO *c){
@@ -241,6 +222,7 @@ CATALOGO *eliminar_libro_inicio(CATALOGO *c, long del){
         return c;
     }
 }
+
 CATALOGO *eliminar_libro_enmedio(CATALOGO *c, long del){
     if(c->head == NULL){
         printf("no hay catalogo\n");
@@ -282,5 +264,37 @@ CATALOGO *eliminar_libro_final(CATALOGO *c, long del){
         c->tam--;
         free(actual);
         return c;
+    }
+}
+
+void recorrer_catalogo(CATALOGO *c){
+    LIBRO *l = c->head;
+    int flecha, salir;
+    printf("presione enter\n");
+    printf("Ahora puede ver el catalogo con las flechas derecha e izquierda\n");
+	while( flecha != '1' ){
+        printf("para salir presiona 1\n");
+	    flecha = getch ();
+	    if(flecha == flecha_der){
+            printf("Titulo: %s\n", l->INFO.titulo);
+            printf("Autor: %s\n", l->INFO.autor);
+            printf("Editorial: %s\n", l->INFO.editorial);
+            printf("ISBN: %ld\n", l->INFO.ISBN);
+            printf("Formato: %s\n", l->INFO.formato);
+            printf("Existencias: %d\n", l->INFO.existencia);
+            printf("Precio: %f\n\n", l->INFO.precio);
+            l = l->next;
+        }
+	    if(flecha == flecha_izq){
+	        printf("Titulo: %s\n", l->INFO.titulo);
+            printf("Autor: %s\n", l->INFO.autor);
+            printf("Editorial: %s\n", l->INFO.editorial);
+            printf("ISBN: %ld\n", l->INFO.ISBN);
+            printf("Formato: %s\n", l->INFO.formato);
+            printf("Existencias: %d\n", l->INFO.existencia);
+            printf("Precio: %f\n\n", l->INFO.precio);
+            l = l->prev;	
+                                    
+	    }       
     }
 }
