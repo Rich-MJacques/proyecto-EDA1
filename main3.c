@@ -5,7 +5,8 @@
 #include "libro.h"
 #include "carrito.h"
 #include <conio.h>
-
+#define flecha_der 77
+#define flecha_izq 75
 void main(){
     printf("Leyendo inventario\n");
     int i, op;
@@ -49,7 +50,7 @@ void main(){
             }
         }
         CARRITO *carrito = crear_carrito();
-    while(opc!='3'){
+    while(opc !='3'){
         opc1= '0';
         printf("	 1:Administrador \n");
         printf("	 2:Cliente\n");
@@ -64,7 +65,7 @@ void main(){
             printf("3) AGREGAR EXISTENCIA DE UN LIBRO\n");
             printf("4) VISUALIZAR LOS LIBROS DE LA TIENDA\n ");
             printf("5:Salir \n");
-    		opc1=getch();
+    		opc1 = getch();
 
     		switch(opc1)
             {
@@ -89,28 +90,32 @@ void main(){
                     
                 break;
                 }
+
                 case '3':{
                    	//Agregar existencias
                     modificar_existencias(c);
                 break;
                 }
+                
                 case '4':{
                     //Imprimir catalogo
                     actualizar_catalogo(c);
                     imprimir_catalogo(c);
                 break;
                 }
+                
                 case '5':{//volver
-                    int resultado=0;
+                    int resultado = 0;
                     printf("1: PARA SALIR \n");
                     printf("2: VOLVER AL MENU INICIAL\n");
                     scanf("%d",&resultado);
-                    if(resultado==1){
-                        opc='3';
+                    if(resultado == 1){
+                        opc ='3';
                     }else
                         opc='0';
                 break;
                 }
+
                 case '6':{
                     printf ("opcion 5");
                     getchar();
@@ -135,12 +140,13 @@ void main(){
                 printf("2. Buscar por titulo\n");
                 printf("3. Buscar por autor\n");
                 printf("4. Buscar ISBN\n");
-                printf("5. Agregar al carrito\n");//revisar
-                printf("6. Eliminar libro del carrito\n");//revisar
-                printf("7. Finalizar compra\n");//revisar :(
-                printf("8. Cerrar sesion\n");
+                printf("5. Recorrer el catalogo 1 por 1\n");
+                printf("6. Agregar al carrito\n");//revisar
+                printf("7. Eliminar libro del carrito\n");//revisar
+                printf("8. Finalizar compra\n");//revisar :(
+                printf("9. Cerrar sesion\n");
 
-                opc2=getch();
+                opc2 = getch();
                 switch (opc2){
                     case '1':{
                         //Imprimir catalogo
@@ -162,17 +168,22 @@ void main(){
                         buscar_libro_ISBN(c);
                         break;
                     }
+                    case '5':{   
+                       //recorrer el catalogo
+                        recorrer_catalogo(c);
+                        break;
+                    }                    
 
-                    case '5':{
+                    case '6':{
                         anadir_libro_carrito(carrito,c); 
                         break;
                     }
-                    case '6':{
+                    case '7':{
                         //Eliminar libro
                         eliminar_libro_carrito(carrito);
                         break;
                     }
-                    case '7':{
+                    case '8':{
                         //Finalizar compra
                         agregar_libro_ticket(carrito); 
                         break;
@@ -190,8 +201,7 @@ void main(){
         }
 
     }
-
-
     }
 }
+
 
